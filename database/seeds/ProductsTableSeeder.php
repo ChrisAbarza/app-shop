@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Product;
+use App\ProductImage;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -14,5 +15,6 @@ class ProductsTableSeeder extends Seeder
     {
         // model factories
         factory(Product::class, 100)->create();
+        factory(ProductImage::class, 200)->create();
     }
 }
