@@ -16,3 +16,10 @@ Route::get('/', 'TestController@welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/products', 'ProductController@index'); //listar
+Route::get('/admin/products/create', 'ProductController@create'); //abrir form crear
+Route::post('/admin/products', 'ProductController@store'); //insertar
+
+Route::get('/admin/products/{id}/edit', 'ProductController@edit');
+Route::post('/admin/products/{id}/edit', 'ProductController@update');

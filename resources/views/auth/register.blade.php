@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Registrate en OTPP')
+
 @section('body-class', 'signup-page')
 
 @section('content')
