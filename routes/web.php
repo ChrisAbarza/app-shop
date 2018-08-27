@@ -21,5 +21,7 @@ Route::get('/admin/products', 'ProductController@index'); //listar
 Route::get('/admin/products/create', 'ProductController@create'); //abrir form crear
 Route::post('/admin/products', 'ProductController@store'); //insertar
 
-Route::get('/admin/products/{id}/edit', 'ProductController@edit');
+Route::get('/admin/products/{id}/edit', 'ProductController@edit'); //abrir form editar
 Route::post('/admin/products/{id}/edit', 'ProductController@update');
+
+Route::post('/admin/products/{id}/delete', 'ProductController@destroy'); //abrir form eliminar
