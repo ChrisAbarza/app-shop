@@ -72,7 +72,7 @@
                             @foreach ($products as $product)
                             <div class="col-md-4">
                                 <div class="team-player">
-                                    <img src="{{ $product->images()->first() ? $product->images()->first()->image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Xvx1qpZAJLoP6l4-6pCxnn7L_f_5Yio12TjgqZ2B5dx9tAhR0g' }}" alt="Thumbnail Image" class="img-raised img-circle">
+                                    <img src="{{ $product->featured_image_url}}" alt="Thumbnail Image" class="img-raised img-circle">
                                     <h4 class="title">{{$product->name}}<br />
                                         <small class="text-muted">{{$product->category->name}}</small>
                                     </h4>
@@ -133,37 +133,6 @@
 
         </div>
 
-        <footer class="footer">
-            <div class="container">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                               About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; 2016, made with <i class="fa fa-heart heart"></i> by Creative Tim
-                </div>
-            </div>
-        </footer>
-
-    </div>
+        </div>
+@include('includes.footer')  
 @endsection

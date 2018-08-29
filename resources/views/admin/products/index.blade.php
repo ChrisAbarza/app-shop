@@ -25,9 +25,9 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>Nombre</th>
-                                        <th class="col-md-4">Descripción</th>
-                                        <th>Categoría</th>
+                                        <th class="col-md-2 text-center">Nombre</th>
+                                        <th class="col-md-5 text-center">Descripción</th>
+                                        <th class="text-center">Categoría</th>
                                         <th class="text-right">Precio</th>
                                         <th class="text-right">opciones</th>
                                     </tr>
@@ -50,6 +50,9 @@
                                                 <a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
+                                                <a href="{{ url('/admin/products/'.$product->id.'/images') }}" rel="tooltip" title="Imágenes del producto" class="btn btn-warning btn-simple btn-xs">
+                                                    <i class="fa fa-image"></i>
+                                                </a>
                                                 <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
                                                     <i class="fa fa-times"></i>
                                                 </button>
@@ -69,37 +72,7 @@
 
         </div>
 
-        <footer class="footer">
-            <div class="container">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                               About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                               Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; 2016, made with <i class="fa fa-heart heart"></i> by Creative Tim
-                </div>
-            </div>
-        </footer>
+        @include('includes.footer')  
 
     </div>
 @endsection
