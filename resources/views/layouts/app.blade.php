@@ -18,6 +18,7 @@
     <!-- CSS Files -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/material-kit.css') }}" rel="stylesheet"/>
+    @yield('styles')
 
 </head>
 
@@ -51,6 +52,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a href="{{ url('/home') }}">Dashboard</a>
+                                    </li>
                                     @if (auth()->user()->admin)
                                     <li>
                                         <a class="dropdown-item" href="{{ url('/admin/products') }}">Gestionar productos 
