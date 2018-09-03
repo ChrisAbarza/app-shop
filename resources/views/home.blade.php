@@ -14,10 +14,18 @@
 
                 <div class="section">
                     <h2 class="title text-center">Dashboard</h2>
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    @if (session('notification'))
+                    <div class="alert alert-success">
+                        <div class="container-fluid">
+                          <div class="alert-icon">
+                            <i class="material-icons">check</i>
+                          </div>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                          </button>
+                          <b>Genial:</b> {{ session('notification') }}
                         </div>
+                    </div>
                     @endif
 
                     <ul class="nav nav-pills nav-pills-primary" role="tablist">
@@ -73,7 +81,17 @@
                                     </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
+                    </table>
+                    <div class="text-center">
+                        <form method="post" action="{{ url('/order') }}">
+                            @csrf
+                            <button class="btn btn-primary btn-round">
+                                <i class="material-icons">done</i> Realizar pedido
+                            </button>
+                        </form>
+                        
+                    </div>
+                    
 
                 </div>
             </div>
