@@ -7,7 +7,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('products/{id}', 'ProductController@show');
 
+
 Route::post('/cart', 'CartDetailController@store');
+Route::delete('/cart', 'CartDetailController@destroy');
+
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/admin/products', 'Admin\ProductController@index'); //listar
 	Route::get('/admin/products/create', 'Admin\ProductController@create'); //abrir form crear

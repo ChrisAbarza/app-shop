@@ -7,6 +7,10 @@ use App\CartDetail;
 
 class CartDetailController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store(Request $request){
     	$cartDetail = new CartDetail();
     	$cartDetail->cart_id = auth()->user()->cart->id;
@@ -14,6 +18,16 @@ class CartDetailController extends Controller
     	$cartDetail->quantity = $request->quantity;
     	$cartDetail->save();
 
+    	return back();
+    }
+
+    public function destroy(Request $request)
+    {
+    	$cartDetail = CartDetail::find($request->cart_detail_id);
+
+    	if ($cartDetail->cart_id == auth()->user()->cart->id) {
+    		$cartDetail->delete();
+    	}
     	return back();
     }
 }
