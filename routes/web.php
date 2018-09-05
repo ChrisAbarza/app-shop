@@ -29,4 +29,14 @@ Route::middleware(['auth','admin'])->group(function () {
 	Route::delete('/admin/products/{id}/images', 'Admin\ImageController@destroy'); //borrar
 	Route::get('/admin/products/{id}/images/select/{image}', 'Admin\ImageController@select'); //destacar
 
+	//categorias
+	Route::get('/admin/categories', 'Admin\CategoryController@index'); //listar
+	Route::get('/admin/categories/create', 'Admin\CategoryController@create'); //abrir form crear
+	Route::post('/admin/categories', 'Admin\CategoryController@store'); //insertar
+
+	Route::get('/admin/categories/{category}/edit', 'Admin\CategoryController@edit'); //abrir form editar
+	Route::post('/admin/categories/{category}/edit', 'Admin\CategoryController@update');//editar
+
+	Route::post('/admin/categories/{category}/delete', 'Admin\CategoryController@destroy'); //eliminar
+
 });

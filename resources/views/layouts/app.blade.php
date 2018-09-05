@@ -60,6 +60,10 @@
                                         <a class="dropdown-item" href="{{ url('/admin/products') }}">Gestionar productos 
                                         </a>
                                     </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ url('/admin/categories') }}">Gestionar categorías 
+                                        </a>
+                                    </li>
                                     @endif
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
