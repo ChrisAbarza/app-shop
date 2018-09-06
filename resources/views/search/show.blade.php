@@ -38,10 +38,10 @@
             <div class="row">
                 <div class="profile">
                     <div class="avatar">
-                        <img src="{{ $category->featured_image_url }}" alt="Imagen de la categoria {{ $category->name }}" class="img-circle img-responsive img-raised">
+                        <img src="https://bentleyrealtyinc.com/wp-content/uploads/sites/548/2014/10/active-search-512-300x300.gif" alt="busqueda" class="img-circle img-responsive img-raised">
                     </div>
                     <div class="name">
-                        <h3 class="title">{{ $category->name }}</h3>
+                        <h3 class="title">Resultados de la busqueda: "{{ $query }}"</h3>
                     </div>
                     
                     @if (session('notification'))
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="description text-center">
-                <p>{{ $category->description }}</p>
+                <p>Se encontraron {{ $products->count() }} resultados.</p>
             </div>
             
             <div class="team text-center">
