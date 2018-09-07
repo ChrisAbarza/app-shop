@@ -82,7 +82,9 @@
                                     @endforeach
                                 </tbody>
                     </table>
+
                     <div class="text-center">
+                        <h6>Total a pagar: $ {{ auth()->user()->cart->total }}</h6>
                         <form method="post" action="{{ url('/order') }}">
                             @csrf
                             <button class="btn btn-primary btn-round">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a la tienda OTPP')
+@section('title', 'Bienvenido a la ' . config('app.name'))
 
 @section('body-class', 'landing-page')
 
@@ -9,14 +9,14 @@
     .team .row .col-md-4{
         margin-bottom: 5em; 
     }
-    .row {
+    .team .row {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display:         flex;
       flex-wrap: wrap;
     }
-    .row > [class*='col-'] {
+    .team .row > [class*='col-'] {
       display: flex;
       flex-direction: column;
     }
@@ -69,7 +69,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="title">Bienvenido a la tienda OTPP.</h1>
+                        <h1 class="title">Bienvenido a la {{config('app.name')}}.</h1>
                         <h4>Realiza tu pedido con nuestro catalogo y te contactaremos para coordinar el envio (A todo chile)</h4>
                         <br />
                         <a href="https://www.youtube.com/watch?v=4zdoXgGnKdc" class="btn btn-danger btn-raised btn-lg">
